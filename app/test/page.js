@@ -38,7 +38,7 @@ const Page = () => {
             <h1>todos</h1>
             <input type="text" name='title' onChange={onChange} className='border border-red-400'/>
             {todos && todos.map(todo => (
-                <p key={todo.id}>{todo.title} "-" {todo.status ? "completed" : "pending"}
+                <p key={todo.id}>{todo.title} - {todo.status ? "completed" : "pending"}
                     <button onClick={() => dispatch(removeTodo(todo.id))}>remove</button>
                     <button onClick={() => dispatch(updateTodo({ ...todo, title: "new todo", status: true }))}>Edit</button>
                 </p>

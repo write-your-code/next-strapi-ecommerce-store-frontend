@@ -138,7 +138,7 @@ const Page = () => {
               Your cart is empty
             </h2>
             <p className="text-gray-500 font-normal text-md max-w-xs text-center">
-              You haven't added any items to your cart yet. To continue
+              You haven not added any items to your cart yet. To continue
               shopping, visit our <Link href="/">products</Link> page.
             </p>
             <Link

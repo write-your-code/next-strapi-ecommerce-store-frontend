@@ -28,8 +28,8 @@ const ProductDetailsCarousel = ({ images }) => {
         <Image src={"/images/p2.png"} width={400} height={300} />
         <Image src={"/images/slide-1.png"} width={400} height={300} />
       <Image src={"/images/slide-1.png"} width={400} height={300} /> */}
-        {images && images.map((img) => (
-          <img src={`${img?.attributes?.url}`} />
+        {images && images?.map((img) => (
+          <img src={`${img?.attributes?.url}`} key={img?.attributes?.url}/>
         ))}
       </Carousel>
     </div>
