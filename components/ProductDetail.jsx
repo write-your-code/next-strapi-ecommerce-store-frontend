@@ -14,8 +14,7 @@ const ProductDetail = ({ product }) => {
 
   const p = product?.attributes;
   const id = product?.id;
-  console.log(cart, totalAmount);
-  // console.log("details are:", product);
+  
   return (
     <>
       <div className="grid grid-cols-3 gap-2" id="sizesGrid">
