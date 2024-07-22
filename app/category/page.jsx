@@ -9,7 +9,7 @@ import Filters from "@/components/Filters";
 import ProductList from "@/components/ProductList";
 import { ProductListSkeleton } from "@/components/Skeletons";
 
-const page = async ({ params, searchParams }) => {
+const Page = async ({ params, searchParams }) => {
   //   const { slug } = params;
 
   // console.log("products are:", data)
@@ -31,4 +31,4 @@ const page = async ({ params, searchParams }) => {
   );
 };
 
-export default page;
+export default Page;

@@ -7,7 +7,7 @@ import React from "react";
 import Control from "@/components/Control";
 import Filters from "@/components/Filters";
 
-const page = async ({ params, searchParams }) => {
+const Page = async ({ params, searchParams }) => {
   const { slug } = params;
   const { page, maxResults, category } = searchParams;
   
@@ -38,7 +38,7 @@ const page = async ({ params, searchParams }) => {
   );
 };
 
-export default page;
+export default Page;
 
 async function getData(slug, page, maxResult) {
   try {

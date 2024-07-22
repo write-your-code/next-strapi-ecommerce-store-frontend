@@ -4,7 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
+    // cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
+    cartItems: [],
   },
   reducers: {
     addToCart: (state, action) => {
@@ -25,7 +26,7 @@ export const cartSlice = createSlice({
           { ...action.payload, quantity: 1 },
         ];
       }
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItems)),
+      // localStorage.setItem("cartItems", JSON.stringify(state.cartItems)),
         console.log("add to cart called", state.cartItems);
     },
     updateCart: (state, action) => {
@@ -39,14 +40,14 @@ export const cartSlice = createSlice({
         }
         return p;
       });
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      // localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     removeFromCart: (state, action) => {
       console.log(action);
       state.cartItems = state.cartItems.filter(
         (p) => p.id !== action.payload.id
       );
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      // localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     clearCart: (state) => {
       state.cartItems = [];
