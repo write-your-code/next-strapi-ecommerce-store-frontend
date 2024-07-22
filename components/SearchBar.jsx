@@ -4,10 +4,10 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { BiSearch } from "react-icons/bi";
 
-const SearchBar = ({ setMobileMenu }) => {
+const SearchBar = ({ setMobileMenu, setSearchMenu }) => {
   const router = useRouter();
   const pathName = usePathname();
- console.log('pathname,',pathName)
+  console.log("pathname,", pathName);
   const handleSearch = (formData) => {
     // e.preventDefault();
     // const formData = new FormData(e.currentTarget);
@@ -15,8 +15,9 @@ const SearchBar = ({ setMobileMenu }) => {
 
     if (name) {
       router.push(`/category?query=${name}`);
+      setMobileMenu && setMobileMenu((prev) => !prev);
+      setSearchMenu && setSearchMenu((prev) => !prev);
     }
-    setMobileMenu && setMobileMenu((prev) => !prev);
   };
 
   return (
@@ -28,6 +29,7 @@ const SearchBar = ({ setMobileMenu }) => {
         type="text"
         name="name"
         placeholder="Search"
+        required
         disabled={pathName === "/category"}
         className="flex-1 bg-transparent text-gray-500 outline-none px-2"
       />

@@ -13,7 +13,7 @@ export default function NotFound() {
           </p>
           <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-600">
             Sorry, we can't find that page. You'll find lots to explore on the
-            home page.{" "}
+            home page.
           </p>
           <Link
             href="/"

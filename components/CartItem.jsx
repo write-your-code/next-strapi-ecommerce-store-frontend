@@ -1,3 +1,4 @@
+"use client";
 import { removeFromCart, updateCart } from "@/store/cartSlice";
 import Image from "next/image";
 import React from "react";
@@ -156,6 +157,7 @@ const CartItem = ({ item }) => {
               >
                 {item?.size?.data?.map((s, i) => (
                   <option
+                    key={s}
                     value={s.size}
                     selected={item.selectedSize === s.size}
                     className=""

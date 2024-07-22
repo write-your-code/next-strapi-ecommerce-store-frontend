@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 
-const page = () => {
+const Page = () => {
     const count = useSelector((state) => state.counter.value)
     const todos = useSelector((state) => state.todo.todos)
     const dispatch = useDispatch()
@@ -49,4 +49,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

@@ -2,7 +2,13 @@
 import React, { useEffect, useState } from "react";
 import Wrapper from "./Wrapper";
 import Link from "next/link";
-import { BiAlarm, BiCart, BiHeart, BiMenuAltRight } from "react-icons/bi";
+import {
+  BiAlarm,
+  BiCart,
+  BiHeart,
+  BiMenuAltRight,
+  BiSearch,
+} from "react-icons/bi";
 // import Menu from "./Menu1";
 import Menu from "./Menu";
 import MobileNavbar from "./MobileNavbar";
@@ -17,6 +23,7 @@ const Header = () => {
   const [show, setShow] = useState("translate-y-0");
   const [lastScrollY, setLastScrollY] = useState(0);
   const [categories, setCategories] = useState([]);
+  const [searchMenu, setSearchMenu] = useState(false);
 
   const cartCount = useSelector((state) => state.cart.cartItems.length);
   const handleNavbar = () => {
@@ -73,8 +80,16 @@ const Header = () => {
             categories={categories}
           />
         )}
-        <div className="hidden sm:block">
-          <SearchBar />
+        <div className="hidden sm:block relative">
+          <BiSearch
+            className="w-6 h-6 cursor-pointer"
+            onClick={() => setSearchMenu(!searchMenu)}
+          />
+          {searchMenu && (
+            <div className="absolute top-full right-0">
+              <SearchBar setSearchMenu={setSearchMenu} />
+            </div>
+          )}
         </div>
         <div className="flex items-center gap-2">
           {/* icon start */}

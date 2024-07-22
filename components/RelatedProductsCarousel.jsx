@@ -5,7 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ProductCard from "./ProductCard";
 
-const RelatedProductsCarousel = async ({ data }) => {
+const RelatedProductsCarousel = ({ data }) => {
   // await new Promise((resolve) => setTimeout(resolve, 2000));
   const responsive = {
     superLargeDesktop: {
