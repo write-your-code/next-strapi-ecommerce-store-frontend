@@ -10,7 +10,7 @@ const ProductDetail = ({ product }) => {
   const [showError, setShowError] = useState(false);
 
   const cart = useSelector((state) => state.cart.cartItems);
-  const totalAmount = useSelector((state) => state.cart.subTotal);
+  const dispatch = useDispatch();
 
   const p = product?.attributes;
   const id = product?.id;
